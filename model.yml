@@ -1,0 +1,33 @@
+# GitHub Actions / GitLab CI example
+name: ML Model Training Pipeline
+on: [push]
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install nbconvert ipykernel
+    
+    - name: Convert notebook to script
+      run: |
+        jupyter nbconvert --to script train_model.ipynb
+        # Now you have train_model.py
+    
+    - name: Run training
+      run: python train_model.py
+    
+    - name: Save artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: model
+        path: models/
