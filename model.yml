@@ -31,3 +31,20 @@ jobs:
       with:
         name: model
         path: models/
+
+    name: Deploy Model
+    needs: train-model
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download model artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: model 
+      
+
+    - name: Deploy to production
+      run: |
+        # Add your deployment commands here, e.g., upload to S3, deploy to a server, etc.
+        echo "Deploying model to production..." 
+      
+      
