@@ -32,3 +32,12 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
+
+
+# To build the image, run the following command in the terminal:
+# docker build -t hello-python:latest .
+# To apply the deployment and service, run the following command in the terminal:
+# kubectl apply -f pod.yaml
+# To check the status of the deployment and service, run the following command in the terminal:
+# kubectl get deployments
+# kubectl get services
