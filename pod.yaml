@@ -26,7 +26,8 @@ spec:
       labels:
         app: hello-python
     spec:
-      containers:
+      
+    containers:
       - name: hello-python
         image: hello-python:latest
         imagePullPolicy: Never
