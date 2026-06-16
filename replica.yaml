@@ -46,3 +46,11 @@ spec:
         ports:
         - containerPort: 8081
         
+
+
+
+# replication accrording to your case, 
+#          you can modify the number of replicas in the spec section. 
+#       The current configuration sets the number of replicas to 3, which means that there will be 3 instances of the frontend application running. 
+#       You can adjust this number based on your application's requirements and expected load.
+# 
