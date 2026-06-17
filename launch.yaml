@@ -6,3 +6,10 @@ openstack server create \
   --key-name my-keypair \
   --security-group default \
   my-instance
+
+
+  # 2. Wait for ACTIVE state
+openstack server show my-instance -c status
+
+# 3. Allocate floating IP from external pool
+openstack floating ip create external-network
