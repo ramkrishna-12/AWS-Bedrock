@@ -21,3 +21,12 @@ openstack server add floating ip my-instance 203.0.113.10
 
 # 5. Verify connectivity
 ssh ubuntu@203.0.113.10
+
+
+# 6. Create snapshot (stored as Glance image)
+openstack server image create \
+  --name my-instance-snapshot-$(date +%Y%m%d) \
+  my-instance
+
+# 7. Verify snapshot
+openstack image list | grep my-instance-snapshot
