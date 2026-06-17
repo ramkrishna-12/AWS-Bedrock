@@ -1,0 +1,8 @@
+# 1. Launch instance
+openstack server create \
+  --flavor m1.medium \
+  --image ubuntu-22.04 \
+  --network private-net \
+  --key-name my-keypair \
+  --security-group default \
+  my-instance
