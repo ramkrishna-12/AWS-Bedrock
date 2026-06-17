@@ -13,3 +13,11 @@ openstack server show my-instance -c status
 
 # 3. Allocate floating IP from external pool
 openstack floating ip create external-network
+
+
+
+# 4. Associate floating IP
+openstack server add floating ip my-instance 203.0.113.10
+
+# 5. Verify connectivity
+ssh ubuntu@203.0.113.10
