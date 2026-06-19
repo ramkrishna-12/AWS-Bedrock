@@ -1,0 +1,13 @@
+# Check service health
+openstack compute service list
+
+# Check hypervisor details
+openstack hypervisor show <host>
+
+# Check scheduler log for filter rejection
+grep "Filter" /var/log/nova/nova-scheduler.log | tail -50
+
+# nova.conf overcommit settings
+# cpu_allocation_ratio = 16.0
+# ram_allocation_ratio = 1.5
+# disk_allocation_ratio = 1.0
