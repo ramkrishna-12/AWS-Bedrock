@@ -1,0 +1,10 @@
+# Check scheduler logs
+tail -f /var/log/nova/nova-scheduler.log
+
+# List compute hosts and capacity
+openstack host list
+openstack host show <compute-host>
+
+# Check hypervisor stats
+openstack hypervisor stats show
+openstack hypervisor list --long
