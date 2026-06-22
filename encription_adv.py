@@ -54,3 +54,26 @@ def generate_30digit_number() -> int:
 #     # Truncate to 124 bits (15.5 bytes), but since we can't have half a byte, we take 15 bytes
 #     return key[:15]  # Return the first 15 bytes (120 bits) for AES-GCM
 
+# bit length of the key for AES-GCM can be 128, 192, or 256 bits. Since we want 124 bits, we can use a 128-bit key and ignore the last 4 bits. However, AES-GCM requires a key length of either 16 bytes (128 bits), 24 bytes (192 bits), or 32 bytes (256 bits). Therefore, we will derive a 128-bit key and use it for AES-GCM, while ensuring that the effective key length is around 124 bits by using a strong KDF with sufficient iterations.
+# We will derive a 128-bit key and use it for AES-GCM, while ensuring that the effective key length is around 124 bits by using a strong KDF with sufficient iterations.
+# The key derivation function (KDF) will produce a 128-bit key, but we will consider it as a 124-bit key for our purposes, since the last 4 bits can be ignored without significantly affecting security.
+# The salt should be random and unique for each encryption operation to ensure that the same password does not produce the same key, which enhances security against precomputed attacks.
+# The number of iterations for PBKDF2 should be sufficiently high (e.g., 100,000 or more) to make brute-force attacks computationally expensive.
+
+# ----------------------------------------------------------------------
+# 3️⃣ AES‑GCM encryption (includes authentication tag)
+# ----------------------------------------------------------------------
+def encrypt(plaintext: bytes, key: bytes) -> Tuple[bytes, bytes, bytes
+]:
+    """Encrypt the plaintext using AES‑GCM with the given key.
+
+    Returns a tuple of (nonce, ciphertext, tag).
+    """
+    aesgcm = AESGCM(key)
+    nonce = os.urandom(12)  # 12 bytes (96 bits) is a common choice for GCM nonce
+    ciphertext = aesgcm.encrypt(nonce, plaintext, None)  # No additional authenticated data
+    return nonce, ciphertext[:-16], ciphertext[-16:]  # Split ciphertext and tag
+
+# ----------------------------------------------------------------------\
+# 4️⃣ Decryption and verification
+# ----------------------------------------------------------------------
