@@ -18,4 +18,4 @@ MULTI_REGION_SUPPORT = True
 
 # local settings.py is for local overrides. It is not tracked in git, so you can safely put sensitive information here (like passwords) without worrying about it being committed to the repository.
 # deploy openstack-dashboard with a local_settings.py that contains the above settings, and it will work with multiple regions as long as the above caveats are addressed.
-
+# local controls openstack deployment 

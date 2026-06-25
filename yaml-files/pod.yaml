@@ -42,3 +42,6 @@ spec:
 # To check the status of the deployment and service, run the following command in the terminal:
 # kubectl get deployments
 # kubectl get services
+# To access the application, run the following command in the terminal:
+# kubectl get services hello-python-service
+# 
