@@ -53,4 +53,6 @@ spec:
 #          you can modify the number of replicas in the spec section. 
 #       The current configuration sets the number of replicas to 3, which means that there will be 3 instances of the frontend application running. 
 #       You can adjust this number based on your application's requirements and expected load.
-# 
+# k8s pod template defines the desired state of the pods that will be created by the ReplicaSet.
+# replicaSet ensures that the specified number of replicas are running at any given time. If a pod fails or is deleted, the ReplicaSet will create a new pod to maintain the desired number of replicas.
+# spec section defines the desired state of the ReplicaSet, including the number of replicas and the pod template. The selector field specifies how to identify the pods that belong to this ReplicaSet based on their labels. The template field defines the pod specification, including the containers, their images, resource limits, and environment variables.
