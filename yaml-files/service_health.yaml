@@ -1,4 +1,22 @@
 # Check service health
+
+
+#bin/bash
+
+username=$(openstack token issue -f value -c user_name)
+admin_project=$(openstack token issue -f value -c project_name)
+authenticated_user=$(openstack token issue -f value -c user_name)
+allowed_projects=$(openstack token issue -f value -c project_name)
+
+if [[ "$username" == "admin" && "$admin_project" == "admin" ]]; then
+    echo "User is admin and belongs to the admin project."
+elif [[ "$authenticated_user" == "$username" && "$allowed_projects" == "$admin_project" ]]; then
+    echo "User is authenticated and belongs to an allowed project."
+else
+    echo "User is not authorized to perform this action."
+fi
+
+
 openstack compute service list
 
 # Check hypervisor details
@@ -11,3 +29,4 @@ grep "Filter" /var/log/nova/nova-scheduler.log | tail -50
 # cpu_allocation_ratio = 16.0
 # ram_allocation_ratio = 1.5
 # disk_allocation_ratio = 1.0
+
