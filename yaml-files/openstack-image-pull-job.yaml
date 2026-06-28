@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: openstack-image-pull
+spec:
+  template:
+    spec:
+      containers:
+      - name: openstack-client
+        image: docker.io/openstackclient/openstackclient:latest
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            echo "Listing available images..."
+            openstack image list
+            echo "Downloading image..."
+            # Replace IMAGE_NAME with the actual image name or ID
+            openstack image save "IMAGE_NAME" --file /data/image.qcow2
+            echo "Image saved to /data/image.qcow2"
+        env:
+          - name: OS_AUTH_URL
+            valueFrom:
+              secretKeyRef:
+                name: openstack-credentials
+                key: OS_AUTH_URL
+          - name: OS_PROJECT_NAME
+            valueFrom:
+              secretKeyRef:
+                name: openstack-credentials
+                key: OS_PROJECT_NAME
+          - name: OS_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: openstack-credentials
+                key: OS_USERNAME
+          - name: OS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: openstack-credentials
+                key: OS_PASSWORD
+          - name: OS_USER_DOMAIN_NAME
+            valueFrom:
+              secretKeyRef:
+                name: openstack-credentials
+                key: OS_USER_DOMAIN_NAME
+          - name: OS_PROJECT_DOMAIN_NAME
+            valueFrom:
+              secretKeyRef:
+                name: openstack-credentials
+                key: OS_PROJECT_DOMAIN_NAME
+        volumeMounts:
+          - name: image-storage
+            mountPath: /data
+      restartPolicy: Never
+      volumes:
+        - name: image-storage
+          emptyDir: {}
+  backoffLimit: 1
