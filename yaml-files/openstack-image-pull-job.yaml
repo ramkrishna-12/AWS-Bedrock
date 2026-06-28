@@ -56,3 +56,10 @@ spec:
         - name: image-storage
           emptyDir: {}
   backoffLimit: 1
+
+
+
+
+# here image are pulled from openstack images and then k8s pods run images in instances
+# k8s pods can be created using the downloaded image by creating a new pod spec that references the image file saved in /data/image.qcow2.
+# k8s job will run the openstack client to pull the image and save it to a shared volume, which can then be used by other pods in the cluster.
