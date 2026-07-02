@@ -14,3 +14,15 @@ openstack compute service list --host
 
 openstack resource provider list | grep 
 # Must appear with correct CPU/RAM/disk inventory
+
+
+# Verify before declaring done
+# Force schedule a test VM to the new node
+openstack server create --flavor m1.small --image test-img \
+  --availability-zone nova: test-vm
+
+# Verify it reaches ACTIVE
+openstack server show test-vm | grep status
+
+# Attach a volume, assign a FIP, ping external — full end-to-end test
+# Then delete the test VM
