@@ -26,3 +26,6 @@ openstack server show test-vm | grep status
 
 # Attach a volume, assign a FIP, ping external — full end-to-end test
 # Then delete the test VM
+
+# installing the compute node is complete 
+# multiple compute nodes can be installed in parallel, but each node must be verified before moving on to the next.
