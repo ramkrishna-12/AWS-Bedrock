@@ -8,3 +8,18 @@ openstack host show <compute-host>
 # Check hypervisor stats
 openstack hypervisor stats show
 openstack hypervisor list --long
+
+
+# Check scheduler service status
+openstack compute service list --service nova-scheduler
+
+# Check scheduler configuration
+openstack-config --get /etc/nova/nova.conf scheduler_driver
+openstack-config --get /etc/nova/nova.conf scheduler_host_manager
+openstack-config --get /etc/nova/nova.conf scheduler_available_filters
+openstack-config --get /etc/nova/nova.conf scheduler_default_filters
+openstack-config --get /etc/nova/nova.conf scheduler_max_attempts
+openstack-config --get /etc/nova/nova.conf scheduler_max_attempts_per_host
+openstack-config --get /etc/nova/nova.conf scheduler_max_attempts_per_request
+openstack-config --get /etc/nova/nova.conf scheduler_max_attempts_per_request_per_host
+openstack-config --get /etc/nova/nova.conf scheduler_max_attempts_per_request_per_host_per_aggregate
