@@ -23,3 +23,8 @@ openstack-config --get /etc/nova/nova.conf scheduler_max_attempts_per_host
 openstack-config --get /etc/nova/nova.conf scheduler_max_attempts_per_request
 openstack-config --get /etc/nova/nova.conf scheduler_max_attempts_per_request_per_host
 openstack-config --get /etc/nova/nova.conf scheduler_max_attempts_per_request_per_host_per_aggregate
+
+# configure scheduler filters
+openstack-config --set /etc/nova/nova.conf scheduler_available_filters "RetryFilter,  
+AvailabilityZoneFilter, RamFilter, ComputeFilter, ComputeCapabilitiesFilter, ImagePropertiesFilter, ServerGroupAntiAffinityFilter, ServerGroupAffinityFilter, AggregateInstanceExtraSpecsFilter, NUMATopologyFilter, PciPassthroughFilter, CoreFilter, DiskFilter"
+
