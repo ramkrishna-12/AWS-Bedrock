@@ -28,3 +28,5 @@ openstack-config --get /etc/nova/nova.conf scheduler_max_attempts_per_request_pe
 openstack-config --set /etc/nova/nova.conf scheduler_available_filters "RetryFilter,  
 AvailabilityZoneFilter, RamFilter, ComputeFilter, ComputeCapabilitiesFilter, ImagePropertiesFilter, ServerGroupAntiAffinityFilter, ServerGroupAffinityFilter, AggregateInstanceExtraSpecsFilter, NUMATopologyFilter, PciPassthroughFilter, CoreFilter, DiskFilter"
 
+#additional filters can be added as needed based on the deployment requirements.
+#setup scheduler filters in the nova.conf file to control how instances are scheduled on compute nodes.
