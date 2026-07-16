@@ -51,3 +51,9 @@ print(f"Predicted class: {predicted_class_name}")
 # Output Example
 
 # ```Predicted class: setosa```
+
+# ✅ Edge Cases Handled:
+
+# If the model file doesn’t exist, it trains and saves it automatically.
+# Validates that the input is in the correct shape for prediction.
+# If you actually meant "pyinfra" (Python-based infrastructure automation), I can give you a server automation inference/deployment script instead.
