@@ -17,4 +17,5 @@ if __name__ == "__main__":    chat = Chat("General")
     
 
     
-    
+# chat is a simple implementation of a chat system that allows users to send and retrieve messages. The Chat class has methods to send messages and get the list of messages. In the example usage, a chat room named "General" is created, and two messages are sent to it. Finally, the list of messages is printed to the console.
+# implementation of a chat system that allows users to send and retrieve messages. The Chat class has methods to send messages and get the list of messages. In the example usage, a chat room named "General" is created, and two messages are sent to it. Finally, the list of messages is printed to the console.
