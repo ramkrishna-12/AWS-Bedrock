@@ -35,3 +35,19 @@ predicted_class_index = model.predict(sample_input)[0]
 predicted_class_name = load_iris().target_names[predicted_class_index]
 
 print(f"Predicted class: {predicted_class_name}")
+
+
+# How It Works
+# Model Training (One-Time)
+
+# Loads the Iris dataset.
+# Trains a RandomForestClassifier.
+# Saves the model to iris_model.pkl.
+# Inference
+
+# Loads the saved model.
+# Takes a new sample input.
+# Predicts the class name.
+# Output Example
+
+# ```Predicted class: setosa```
