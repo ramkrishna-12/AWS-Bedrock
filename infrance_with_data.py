@@ -87,3 +87,6 @@ if __name__ == "__main__":
 # test data added to the script for demonstration purposes. In production, consider separating test cases into a dedicated test suite using a framework like pytest or unittest for better organization and reporting.
 # data validation and error handling are crucial for production code. Consider adding more comprehensive checks for input ranges, missing values, and unexpected data types to ensure robustness.
 # data integration and model versioning are important for maintaining consistency in production environments. Consider implementing a versioning system for the model and its associated data to track changes and ensure reproducibility.
+# it's the 2nd version of infrance.py
+# infrance.py --> infrance_with_data.py --> infrance_code-review.py
+# in this version, we have added integrated test cases to validate the inference function. It also has better error handling and logging practices, making it more robust for production use.
