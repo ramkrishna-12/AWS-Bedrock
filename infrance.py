@@ -57,3 +57,5 @@ print(f"Predicted class: {predicted_class_name}")
 # If the model file doesn’t exist, it trains and saves it automatically.
 # Validates that the input is in the correct shape for prediction.
 # If you actually meant "pyinfra" (Python-based infrastructure automation), I can give you a server automation inference/deployment script instead.
+# advance version of infrance.py is -->infrance_with_data.py
+# this version of infrance.py is more advanced than the previous one because it includes integrated test cases to validate the inference function. It also has better error handling and logging practices, making it more robust for production use.
