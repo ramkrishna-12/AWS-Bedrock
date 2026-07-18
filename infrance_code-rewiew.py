@@ -102,4 +102,8 @@ if __name__ == "__main__":
 # code review comment -> Additionally, consider adding comments on the expected input ranges and types for the inference function to improve usability and maintainability.
 # code commite review comment -> Finally, consider implementing a more robust testing framework (like pytest) for better test management and reporting in larger projects.
 # final code review comment -> Overall, the code is clear and functional, but could benefit from additional documentation, error handling, and configurability for production use.
-#
+#current lasest version of infrance.py is more advanced than the previous one because it includes integrated test cases to validate the inference function. It also has better error handling and logging practices, making it more robust for production use.
+# 1 --> infrance.py -->
+#                       2 --> infrance_with_data.py --> 
+#                                                       3 --> infrance_code-review.py
+#                                                                                      | latest till update
