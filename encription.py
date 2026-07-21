@@ -41,3 +41,7 @@ if __name__ == "__main__":
         print(f"124-bit key (Base64): {key_b64}")
     except Exception as e:
         print(f"Error: {e}")
+
+# encription.py is a Python script that provides a function to generate a cryptographically secure random key of a specified bit length. The key can be returned in different encodings: hexadecimal, Base64, or raw bytes. The script includes error handling for invalid encoding options and ensures that the generated key adheres to the specified bit length, even if it is not a multiple of 8. The example usage demonstrates generating and printing a 124-bit key in both hexadecimal and Base64 formats.
+# encription with adding salt is a Python script that provides a function to generate a cryptographically secure random key of a specified bit length. The key can be returned in different encodings: hexadecimal, Base64, or raw bytes. The script includes error handling for invalid encoding options and ensures that the generated key adheres to the specified bit length, even if it is not a multiple of 8. The example usage demonstrates generating and printing a 124-bit key in both hexadecimal and Base64 formats.
+# salt is a random value added to the key generation process to enhance security. In this script, the salt is not explicitly implemented, but it can be incorporated by combining the generated key with a random salt value before encoding. This would make the key more resistant to attacks, as the same input would produce different outputs due to the added randomness from the salt.
