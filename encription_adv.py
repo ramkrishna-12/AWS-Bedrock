@@ -77,3 +77,9 @@ def encrypt(plaintext: bytes, key: bytes) -> Tuple[bytes, bytes, bytes
 # ----------------------------------------------------------------------\
 # 4️⃣ Decryption and verification
 # ----------------------------------------------------------------------
+# advance encription method with AES-GCM, PBKDF2-HMAC, and a 30-digit numeric key. The code includes functions for generating a random 30-digit number, deriving a key from the password and salt, encrypting plaintext using AES-GCM, and decrypting the ciphertext while verifying its authenticity. The encryption process uses a random nonce and produces an authentication tag to ensure data integrity.
+# methouds include:
+# - generate_30digit_number(): Generates a random 30-digit integer to be used as a password.
+# - derive_key(): Derives a 124-bit key from the password and salt using PBKDF2-HMAC with SHA256.
+# - encrypt(): Encrypts the plaintext using AES-GCM with the derived key, returning the nonce, ciphertext, and authentication tag.  
+ # 
