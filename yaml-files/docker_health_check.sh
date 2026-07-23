@@ -120,3 +120,13 @@ do
         echo "FAILED: $image" >> "$REPORT_FILE"
     fi
 done
+
+
+# Final Summary
+echo ""
+echo "Docker Health Check Completed."
+echo "Reports saved to:"
+echo "  - $REPORT_FILE"
+echo "  - $ACTIVE_LOGS_FILE"
+echo "  - $ERROR_LOGS_FILE"
+# health check script for Docker containers and images. It generates reports on container status, health, logs, and image integrity.
